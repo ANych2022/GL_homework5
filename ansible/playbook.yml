@@ -1,0 +1,16 @@
+---
+
+- name: create empty file /etc/iaac with rigths 0500
+  hosts: iaas
+  become: true
+  roles:
+    - create_file
+
+
+- name: fetch a linux distro name/version
+  hosts: all
+  become: true
+
+  roles: 
+    - linux_distro
+
